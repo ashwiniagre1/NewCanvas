@@ -1,0 +1,61 @@
+<amexio-card [footer]="true" [header]="true" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+    <amexio-header>
+        Employee Registration
+    </amexio-header>
+    <amexio-body>
+        <amexio-row>
+            <amexio-column size="2">
+                <amexio-text-input [field-label]="'Emp Id'" [(ngModel)]="testuiModel.id" name="testuiModel.id" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+            <amexio-column size="5">
+                <amexio-text-input [field-label]="'First name'" [(ngModel)]="testuiModel.firstName" name="testuiModel.firstName" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+            <amexio-column size="5">
+                <amexio-text-input [field-label]="'Last Name'" [(ngModel)]="testuiModel.lastName" name="testuiModel.lastName" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-text-input [field-label]="'phone'" [(ngModel)]="testuiModel.phone" name="testuiModel.phone" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-number-input [field-label]="'Age'" [(ngModel)]="testuiModel.age" name="testuiModel.age" [allow-blank]="true" [font-size]="10" [has-label]="true" [min-value]="0" [max-value]="20">
+                </amexio-number-input>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-radio-group [field-label]="'Gender'" name="testuiModel.genderId" [data-reader]="'data'" [display-field]="'gender'" [value-field]="'genderId'" [data]="radiogroupData" [horizontal]="true">
+                </amexio-radio-group>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-dropdown [(ngModel)]="testuiModel.departemntId" name="testuiModel.departemntId" [search]="true" [field-label]="'department'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/dept/findall'" [http-method]="'get'" [data]="departemntId_Data"
+                    [display-field]="'name'" [value-field]="'id'" [search]="'true'">
+                </amexio-dropdown>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-text-input [field-label]="'email'" [(ngModel)]="testuiModel.email" name="testuiModel.email" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true" (click)="click_email($event)">
+        </amexio-text-input>
+        <amexio-dropdown [(ngModel)]="testuiModel.countryId" name="testuiModel.countryId" [search]="true" [field-label]="'Country'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/country/findall'" [http-method]="'get'" [data]="countryId_Data" [display-field]="'countryName'"
+            [value-field]="'id'" (click)="click_countryId($event)">
+        </amexio-dropdown>
+        <amexio-dropdown [(ngModel)]="testuiModel.stateId" name="testuiModel.stateId" [search]="true" [field-label]="'State'">
+        </amexio-dropdown>
+
+    </amexio-body>
+
+    <amexio-action>
+        <amexio-button [label]="'Cancel'" [icon]="'fa fa-close fa 2x'" [type]="'default'" [tooltip]="'button'" [size]="'default'" [form-bind]="'cancel'">
+        </amexio-button>
+        <amexio-button [label]="'Save'" [icon]="'fa fa-save fa 2x'" [type]="'green'" [tooltip]="'button'" [size]="'default'" [form-bind]="'saveBtn'" (click)="click_saveBtn($event)">
+        </amexio-button>
+
+    </amexio-action>
+</amexio-card>
