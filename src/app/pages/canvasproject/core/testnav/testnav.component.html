@@ -1,0 +1,17 @@
+<amexio-row>
+    <amexio-column size="12">
+        <amexio-card [footer]="true" [header]="false" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+            <amexio-body>
+                <amexio-listbox [filter]="true" [data]="empList_Data" [height]="250" [search-placeholder]="'Search Employee'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/emp/findall'" [http-method]="'get'" [display-field]="'firstName'" [header]="'Employee List'">
+                </amexio-listbox>
+
+            </amexio-body>
+
+            <amexio-action>
+                <amexio-button [label]="'New Employee  Registration'" [type]="'default'" [tooltip]="'button'" [size]="'default'" [form-bind]="'newBtn'" (click)="click_newBtn($event)">
+                </amexio-button>
+
+            </amexio-action>
+        </amexio-card>
+    </amexio-column>
+</amexio-row>

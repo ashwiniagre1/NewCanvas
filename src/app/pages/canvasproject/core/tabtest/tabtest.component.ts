@@ -1,6 +1,6 @@
 /**
  * Created by: Ashwini Agre
- * Date: 03/07/2018
+ * Date: 04/07/2018
  * Organization: Individual	
  */
 import {Component, OnInit} from '@angular/core';
@@ -52,4 +52,5 @@ export class TabtestComponent implements OnInit
 
 export class TabtestModel
 {
+	 testtext: string; 
 }

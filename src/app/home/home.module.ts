@@ -24,6 +24,9 @@ const routes: Routes = [
 	     	{
      	path: 'core/tabtest', loadChildren: './../pages/canvasproject/core/tabtest/tabtest.module#TabtestModule'
      	},	
+	     	{
+     	path: 'core/testnav', loadChildren: './../pages/canvasproject/core/testnav/testnav.module#TestnavModule'
+     	},	
 	    ]
   }
 ];
